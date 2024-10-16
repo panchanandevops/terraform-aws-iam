@@ -31,14 +31,14 @@ variable "iam_group_k8s_group_mapping" {
       role_name   = "eks-admin"
       role_actions = ["eks:*"]
       pass_role   = true
-      k8s_groups   = ["k8s-admin"]
+      k8s_groups   = ["my-admin"]
     }
 
     developer_group = {
       role_name   = "developer-role"
       role_actions = ["eks:DescribeCluster", "eks:ListClusters"]
       pass_role   = false
-      k8s_groups   = ["k8s-viewer"]
+      k8s_groups   = ["my-viewer"]
     }
   }
 }
