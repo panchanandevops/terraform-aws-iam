@@ -8,6 +8,12 @@ variable "eks_name" {
   type        = string
 }
 
+
+variable "account_id" {
+  type = string
+  description = "account id for current caller"
+}
+
 variable "iam_user_group_mapping" {
   description = "Mapping of IAM users to their respective groups for organizational structure."
   type = map(string)
