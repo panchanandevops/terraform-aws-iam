@@ -1,4 +1,8 @@
+data "aws_caller_identity" "current" {}
 
+locals {
+  account_id = data.aws_caller_identity.current.account_id
+}
 
 resource "aws_iam_role" "roles" {
   for_each = var.iam_group_k8s_group_mapping
@@ -12,7 +16,7 @@ resource "aws_iam_role" "roles" {
         Effect = "Allow"
         Action = "sts:AssumeRole"
         Principal = {
-          AWS = "arn:aws:iam::${var.account_id}:root"
+          AWS = "arn:aws:iam::${local.account_id}:root"
         }
       }
     ]

@@ -8,11 +8,6 @@ variable "eks_name" {
   type        = string
 }
 
-variable "account_id" {
-  description = "account_id is a string we will get from aws_caller_identity"
-  type = string
-}
-
 variable "iam_user_group_mapping" {
   description = "Mapping of IAM users to their respective groups for organizational structure."
   type = map(string)
