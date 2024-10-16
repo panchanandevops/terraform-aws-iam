@@ -1,4 +1,4 @@
-data "aws_caller_identity" "current" {}
+
 
 resource "aws_iam_role" "roles" {
   for_each = var.iam_group_k8s_group_mapping
